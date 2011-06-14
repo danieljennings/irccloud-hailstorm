@@ -38,9 +38,8 @@ function HS_main ($) {
     };
     
     // Run startup changes
-    $('body').css('font', 'normal 10pt "Consolas"');
-    $('#chatInputBox').css('font', 'normal 10pt "Consolas"');
-    
+    $('head').append($('<style> * { font-family: "Consolas" !important; font-size: 10pt !important } </style>'));
+        
     // Register for chat messages
     $('#buffer').bind('DOMNodeInserted', function (event) {
         var $target = $(event.target);
